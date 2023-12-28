@@ -14,7 +14,7 @@ jobs:
              distribution: 'adopt'
              cache: maven
          - name: Build with Maven
-           run: mvn package
+           run: mvn package  # Building my war file with this
          - name: deploy to github artifacts
            uses: actions/upload-artifact@v2
            with: 
