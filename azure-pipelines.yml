@@ -10,6 +10,7 @@ trigger:
 pool:
   name: 'default'
 
+
 steps:
 - task: Maven@4
   inputs:
@@ -21,3 +22,8 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(agent.builddirectory)'
+    Contents: '/target/*.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
