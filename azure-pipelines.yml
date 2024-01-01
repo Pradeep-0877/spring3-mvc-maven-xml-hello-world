@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'gcloud-server'
+  vmImage: 'default'
 
 steps:
 - task: Maven@3
