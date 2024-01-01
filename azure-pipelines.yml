@@ -33,3 +33,10 @@ steps:
     ArtifactName: 'my-war-artifact'
     publishLocation: 'Container'
     MaxArtifactSize: 2
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(0a1ffb04-9e5b-44c3-873c-02a953f33c81)'
+    appType: 'webAppLinux'
+    WebAppName: 'my-java-app-az'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
