@@ -21,5 +21,5 @@ jobs:
              name: my artifact
              path: target/*.war
          - name: deploy to Tomcat
-           run: curl -v -u pradeep:pradeep /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war http://http://34.125.220.76:8080/manager/text/deploy?=/my-spring-app
+           run: curl -v -u pradeep:pradeep /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war http://34.125.220.76:8080/manager/text/deploy?=/my-spring-app
           
