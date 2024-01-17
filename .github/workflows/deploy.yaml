@@ -1,5 +1,5 @@
 name: my-workflow
-on: push
+on: push  #This will triggers when any commit is pushed
 jobs:
   deploy:
       # needs: build
