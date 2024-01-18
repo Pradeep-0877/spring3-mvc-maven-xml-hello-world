@@ -15,6 +15,7 @@ on:   #This will triggers when any commit is pushed
             - prod
 jobs:
   build:
+    environment: ${{github.event.inputs.environment}}
     name: Build and analyze
     runs-on: ubuntu-latest
     steps:
