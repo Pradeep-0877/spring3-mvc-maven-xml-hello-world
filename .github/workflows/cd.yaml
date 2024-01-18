@@ -21,4 +21,4 @@ jobs:
            - run: echo "${{github.event.workflow_run.event.inputs.environment}}"
            - uses: actions/checkout@v2
            - name: deploy to Tomcat
-             run: curl -v -u ${{secrets.TOMCAT_USR}}:${{secrets.TOMCAT_PSW}} -T /home/runner/work/spring3-mvc-maven-xml-hello-world/artifacts/*/*.war http://34.125.220.76:8080/manager/text/deploy?path=/spring-hello-war
+             run: curl -v -u ${{secrets.TOMCAT_USR}}:${{secrets.TOMCAT_PSW}} -T /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/artifacts/*/*.war http://34.125.220.76:8080/manager/text/deploy?path=/spring-hello-war
