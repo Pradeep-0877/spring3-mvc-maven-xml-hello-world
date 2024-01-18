@@ -47,6 +47,6 @@ jobs:
       - name: achiving the artifacts
         uses: actions/upload-artifact@v3
         with: 
-          name: ${{ github.evemt.input.ARTIFACT_NAME }}
+          name: ${{ github.event.input.ARTIFACT_NAME }}
           path: target/*.war
           
