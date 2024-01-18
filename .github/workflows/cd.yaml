@@ -1,0 +1,25 @@
+name: deploy
+on: 
+    workflow_run: 
+        workflows: Build
+        types: 
+            - completed
+jobs: 
+    deploy:
+        # needs: build
+        environment: test
+        runs-on: ubuntu-latest
+        steps:
+           - name: Download build artifact from triggered workflow
+             uses: dawidd6/action-download-artifact@v2
+             with:
+                run_id: ${{ github.event.workflow_run.id }}
+               # name: ${{ github.event.workflow_run.event.inputs.ARTIFACT_NAME }}
+                path: ./artifacts
+                search_artifacts: true
+             
+           - run: echo "${{ github.event.workflow_run.event }}"
+           - run: echo "${{github.event.workflow_run.event.inputs.environment}}"
+           - uses: actions/checkout@v2
+           - name: deploy to Tomcat
+             run: curl -v -u ${{secrets.TOMCAT_USR}}:${{secrets.TOMCAT_PSW}} -T /home/runner/work/spring3-mvc-maven-xml-hello-world/artifacts/*/*.war http://34.125.220.76:8080/manager/text/deploy?path=/spring-hello-war
