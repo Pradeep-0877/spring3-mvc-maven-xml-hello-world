@@ -25,4 +25,4 @@ jobs:
                cd */
                pwd
            - name: deploy to Tomcat
-             run: curl -v -u admin:admin -T /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/artifacts/*/*.war https://54.206.111.223:8080/manager/text/deploy?path=/spring-hello-war
+             run: curl -v -u admin:admin -T /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/artifacts/*/*.war http://54.206.111.223:8080/manager/text/deploy?path=/spring-hello-war
